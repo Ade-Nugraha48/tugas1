@@ -1,0 +1,57 @@
+@font-face {
+    font-family: font1;
+    src: url("Nightcore Demo.ttf");
+  }
+
+  h2,
+  .navbar-brand {
+    font-family: font1;
+    font-weight: 200;
+  }
+
+  .form-control,
+  textarea {
+    background-color: #343a40;
+    color: white;
+  }
+
+  .background {
+    background-image: url("background2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 900px;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    background-blend-mode: darken;
+  }
+
+  .submit-container {
+    margin-top: 50px;
+  }
+  body {
+    overflow: hidden;
+  }
+  footer {
+    position: absolute;
+    bottom: 10px;
+    right: 22px;
+  }

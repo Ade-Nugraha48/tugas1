@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,15 +11,17 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Nightcore&display=swap"
       rel="stylesheet"
+
     />
+    <link rel="stylesheet" href="hitung.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="home.css" />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-transparent">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-transparent">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">(Ade Nugraha)</a>
         <button
@@ -35,16 +37,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a 
+            class="nav-link active text-white"
+            aria-current="page"
+            href="home.html"
+            ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
             <li class="nav-item">
-              <a
-                class="nav-link active text-white"
-                aria-current="page"
-                href="home.html"
-                ><i class="fas fa-home"></i> Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
+                <a
                 class="nav-link active text-white"
                 aria-current="page"
                 href="kontak.html"
@@ -52,7 +54,7 @@
               >
             </li>
             <li class="nav-item">
-              <a
+                <a
                 class="nav-link active text-white"
                 aria-current="page"
                 href="tanggal.php"
@@ -60,7 +62,7 @@
               >
             </li>
             <li class="nav-item">
-              <a
+                <a
                 class="nav-link active text-white"
                 aria-current="page"
                 href="segitiga.php"
@@ -68,56 +70,48 @@
               >
             </li>
             <li class="nav-item">
-              <a
+                <a
                 class="nav-link active text-white"
                 aria-current="page"
                 href="kubus.php"
                 ><i class="fas fa-wheelchair"></i> Kubus</a
               >
             </li>
+           
           </ul>
         </div>
       </div>
     </nav>
 
-    <div class="content">
-      <br />
-      <h2>Curriculum Vitae</h2>
-      <br />
-      <img
-        src="profil.jpg"
-        alt="Profile"
-        class="img-fluid"
-        style="width: 150px; height: 200px"
-      />
-      <table class="transparent-table mt-3 text-start">
-        <tr>
-          <td colspan="3" style="text-align: center; font-weight: bold">
-            Biodata
-          </td>
-        </tr>
-        <tr>
-          <td>Nama</td>
-          <td>:</td>
-          <td>Ade Nugraha</td>
-        </tr>
-        <tr>
-          <td>NIM</td>
-          <td>:</td>
-          <td>124240190</td>
-        </tr>
-        <tr>
-          <td>TTL</td>
-          <td>:</td>
-          <td>Tabalong, 10 November 2005</td>
-        </tr>
-        <tr>
-          <td>No.Telp</td>
-          <td>:</td>
-          <td>+62 8xx 4664 10xx</td>
-        </tr>
-      </table>
+    <h2>Luas Segitiga</h2>
+
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+      <div class="col-md-4">
+        <form method="post" action="">
+        <div class="mb-3">
+          <label for="alas" class="form-label">Masukan Alas:</label>
+          <input type="number" class="form-control text-center" id="alas" name="alas" required>
+        </div>
+        <div class="mb-3">
+          <label for="tinggi" class="form-label">Masukan Tinggi:</label>
+          <input type="number" class="form-control text-center" id="tinggi" name="tinggi" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Hitung Luas</button>
+        </form>
+      </div>
+      </div>
     </div>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $alas = $_POST['alas'];
+      $tinggi = $_POST['tinggi'];
+      $luas = 0.5 * $alas * $tinggi;
+      echo "<div class='alert alert-success mt-3'><strong>Luas Segitiga:</strong> 1/2 * $alas * $tinggi = <strong>$luas</strong></div>";
+    }
+    ?>
 
     <footer class="bg-transparent text-white py-2 text-end">
       <div class="container text-end">
@@ -125,6 +119,6 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
